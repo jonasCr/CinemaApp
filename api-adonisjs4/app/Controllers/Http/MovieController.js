@@ -24,7 +24,7 @@ class MovieController {
       }
     })
 
-    return reponse.json(cinema);
+    return response.json(cinema);
   }
 
   async byMovie ({response, params}) {
