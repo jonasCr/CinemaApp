@@ -1,3 +1,5 @@
+//Crear la tabla user (por defecto con Adonis)
+
 'use strict'
 
 const Schema = use('Schema')

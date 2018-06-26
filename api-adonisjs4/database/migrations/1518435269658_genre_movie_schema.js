@@ -1,8 +1,11 @@
+//Crear la tabla genre_movie
+//Asocia un genero a una pelicula
 'use strict'
 
 const Schema = use('Schema')
 
 class GenreMovieSchema extends Schema {
+  //Crea la tabla
   up () {
     this.create('genre_movie', (table) => {
       table.integer('movie_id').unsigned();
@@ -12,6 +15,7 @@ class GenreMovieSchema extends Schema {
     })
   }
 
+  //Elimina la tabla
   down () {
     this.drop('genre_movie')
   }

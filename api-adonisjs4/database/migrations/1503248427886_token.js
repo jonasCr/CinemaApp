@@ -1,3 +1,4 @@
+//Crear la tabla token par crear un webtoken (por defecto con Adonis)
 'use strict'
 
 const Schema = use('Schema')

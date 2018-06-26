@@ -1,5 +1,7 @@
 'use strict'
 
+//Eso va a insertar los datos de facroty.js en la base de datos
+
 const Factory = use('Factory')
 
 class DatabaseSeeder {

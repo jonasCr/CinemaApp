@@ -15,6 +15,7 @@
 
 const Route = use('Route')
 
+//Creamos las rutas por las cuales llemaremos la API y optener las informaciones de la base de datos
 Route.group(() => {
   Route.post('login', 'AuthController.login');
   Route.post('register', 'AuthController.register');

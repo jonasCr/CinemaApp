@@ -1,8 +1,11 @@
+//Crear la tabla Customer
+//Asigna a un user una tarjeta de credito y un telefono
 'use strict'
 
 const Schema = use('Schema')
 
 class CustomerSchema extends Schema {
+  //Crea la tabla
   up () {
     this.create('customers', (table) => {
       table.increments();
@@ -14,6 +17,7 @@ class CustomerSchema extends Schema {
     })
   }
 
+  //Elimina la tabla
   down () {
     this.drop('customers')
   }

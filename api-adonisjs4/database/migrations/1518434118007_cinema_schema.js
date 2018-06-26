@@ -1,8 +1,10 @@
+//Crear la tabla Cinema
 'use strict'
 
 const Schema = use('Schema')
 
 class CinemaSchema extends Schema {
+  //Crea la tabla
   up () {
     this.create('cinemas', (table) => {
       table.increments()
@@ -15,6 +17,8 @@ class CinemaSchema extends Schema {
     })
   }
 
+
+  //Elimina la tabla
   down () {
     this.drop('cinemas')
   }

@@ -1,8 +1,11 @@
+//Crear la tabla Movie
+//Almacena los details bascio de una pelicula
 'use strict'
 
 const Schema = use('Schema')
 
 class MovieSchema extends Schema {
+  //Crea la tabla
   up () {
     this.create('movies', (table) => {
       table.increments();
@@ -14,6 +17,7 @@ class MovieSchema extends Schema {
     })
   }
 
+  //Elimina la tabla
   down () {
     this.drop('movies')
   }

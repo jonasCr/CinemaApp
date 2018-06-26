@@ -1,8 +1,11 @@
+//Crear la tabla genre_movie
+//asigna a cada asiento una reserva
 'use strict'
 
 const Schema = use('Schema')
 
 class SeatSchema extends Schema {
+  //Crea la tabla
   up () {
     this.create('seats', (table) => {
       table.increments()
@@ -14,6 +17,7 @@ class SeatSchema extends Schema {
     })
   }
 
+  //Elimina la tabla
   down () {
     this.drop('seats')
   }

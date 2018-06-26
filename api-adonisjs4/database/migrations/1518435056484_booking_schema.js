@@ -1,8 +1,11 @@
+//Crear la tabla Cinema
+//Todas las reserva que han hecho los usuario
 'use strict'
 
 const Schema = use('Schema')
 
 class BookingSchema extends Schema {
+  //Crea la tabla
   up () {
     this.create('bookings', (table) => {
       table.increments();
@@ -15,6 +18,7 @@ class BookingSchema extends Schema {
     })
   }
 
+  //Elimina la tabla
   down () {
     this.drop('bookings')
   }
