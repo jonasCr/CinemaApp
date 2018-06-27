@@ -104,8 +104,20 @@ export const store = new Vuex.Store({
 })
 //.almacén global de datos con vuex
 
+//vue traducciones
+import VueI18n from 'vue-i18n'
+Vue use(VueI18n)
+//importacion las "palabras de todas las idiomas"
+import messages from '@/translations'
+const i18n = new VueI18n({
+  locale: store.state.language,
+  messages
+})
+//.vue traducciones
+
 new Vue({
   el: '#app',
   render: h => h(App),
-  store
+  store,
+  i18n
 })
