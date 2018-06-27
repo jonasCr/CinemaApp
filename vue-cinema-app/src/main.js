@@ -30,6 +30,14 @@ import globalTypes from '@/types/global'
 
 //vee-validate: Para validar de manera sencilla formularios
 import VeeValidate, {Validator} from 'vee-validate';
+
+  //traduction:
+import validatorEs from '@/validator/es'
+import validatorEn from '@/validator/en'
+import validatorFr from '@/validator/fr'
+
+Validator.localize('es', validatorEs)
+
 Vue.use(VeeValidate);
 //.vee-validate
 
@@ -45,16 +53,50 @@ Vue.use(ClientTable, {}, false, 'bootstrap4', 'default')
 //almacén global de datos con vuex
 export const store = new Vuex.Store({
   state : {
-
+    processing: false,
+    language: 'es'
   },
   actions:{
+    //Llamamos a la function dentro del fichero global.js
+    [globalTypes.actions.changeLanguage] : ({commit}, lang) => {
+      //esta funcion va a llamar a la mutation de setLanguage
+      commit(globalTypes.mutations.setLanguage, lang);
+      //En function del idioma que pasamos, utilizaremos un idioma o otro
+      switch (lang) {
+        case 'en': {
+          Validator.localize('en', validatorEn);
+          break;
+        }
+        case 'es': {
+          Validator.localize('es', validatorEs)
+        }
+        case 'fr': {
+          Validator.localize('fr', validatorFr);
+          break;
+        }
 
+      }
+    }
   },
   getters: {
-
+    //Saber el si estamos processando
+    [globalTypes.getters.processing]: state => state.processing,
+    //saber el idioma de la pagina
+    [globalTypes.getters.language]: state => state.language,
   },
   mutations: {
-
+    //cuando estamos processando
+    [globalTypes.mutations.startProcessing] (state) {
+      state.processing = true
+    },
+    //cuando paramos un processo
+    [globalTypes.mutations.stopProcessing] (state) {
+      state.processing = false
+    },
+    //Funcion para cambiar el idioma
+    [globalTypes.mutations.setLanguage] (state, lang) {
+      state.language = lang;
+    }
   },
   modules: {
 
