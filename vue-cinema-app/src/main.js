@@ -25,7 +25,7 @@ Vue.use(BlockUI);
 //.blockui
 
 //modulos y typos
-import globalTypes from '@types/global'
+import globalTypes from '@/types/global'
 //.modulos y typos
 
 //vee-validate: Para validar de manera sencilla formularios

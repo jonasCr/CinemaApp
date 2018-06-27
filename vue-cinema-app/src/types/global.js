@@ -1,7 +1,7 @@
 //Importar el js NAMESPACE
-import namespace from '@utils/namespace';
+import namespace from '@/utils/namespace';
 
-export default namespace('global',
+export default namespace('global', {
   //Para enviar peticiones HTTP:
   actions: [
     'changeLanguage'

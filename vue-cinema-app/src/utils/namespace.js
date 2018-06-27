@@ -8,7 +8,7 @@ function mapValues (obj, f) {
 
 export default (module, types) => {
   let newObj = {};
-  mapValues(types, (names,types) => {
+  mapValues(types, (names,type) => {
     newObj[type] = {};
     types[type].forEach(name => {
       newObj[type][name]=module + ':'+name;
