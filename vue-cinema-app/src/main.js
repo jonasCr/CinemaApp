@@ -27,6 +27,8 @@ Vue.use(BlockUI);
 //modulos y typos
 import globalTypes from '@/types/global';
 import authModule from '@/modules/auth';
+import Navigation from '@/components/navigation';
+Vue.use(Navigation);
 //.modulos y typos
 
 //vee-validate: Para validar de manera sencilla formularios
