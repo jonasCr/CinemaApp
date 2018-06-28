@@ -184,7 +184,7 @@ export default {
       hour: 'Hour',
       list: 'List of your reservations'
     }
-  }
+  },
   fr: {
     messages: {
       processing: "En cours...",

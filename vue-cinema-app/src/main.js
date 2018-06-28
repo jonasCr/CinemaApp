@@ -25,7 +25,8 @@ Vue.use(BlockUI);
 //.blockui
 
 //modulos y typos
-import globalTypes from '@/types/global'
+import globalTypes from '@/types/global';
+import authModule from '@/modules/auth';
 //.modulos y typos
 
 //vee-validate: Para validar de manera sencilla formularios
@@ -50,7 +51,9 @@ import {ClientTable} from 'vue-tables-2';
 Vue.use(ClientTable, {}, false, 'bootstrap4', 'default')
 //.vue-tables-2
 
-//almacén global de datos con vuex
+//vuex
+//Nos permite almacenar datos en vuex para poder usarlos dentro de cualquier
+//parte de nuestra application
 export const store = new Vuex.Store({
   state : {
     processing: false,
@@ -79,7 +82,7 @@ export const store = new Vuex.Store({
     }
   },
   getters: {
-    //Saber el si estamos processando
+    //Saber si estamos processando
     [globalTypes.getters.processing]: state => state.processing,
     //saber el idioma de la pagina
     [globalTypes.getters.language]: state => state.language,
@@ -99,14 +102,16 @@ export const store = new Vuex.Store({
     }
   },
   modules: {
-
+    //importamos los modulos de la carpeta modules para que
+    //sean disponibles dentro de vuex
+    authModule
   }
 })
-//.almacén global de datos con vuex
+//.vuex
 
 //vue traducciones
-import VueI18n from 'vue-i18n'
-Vue use(VueI18n)
+import VueI18n from 'vue-i18n';
+Vue.use(VueI18n)
 //importacion las "palabras de todas las idiomas"
 import messages from '@/translations'
 const i18n = new VueI18n({
