@@ -39,13 +39,14 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from 'vuex'
+import {mapActions, mapGetters} from 'vuex';
+import authTypes from '@/types/auth';
 export default {
   name:'navigation',
   methods: {
     //Creamos un alias para las actiones
     ...mapActions({
-      _logout: authTypes.actions.logout;
+      _logout: authTypes.actions.logout
     }),
     //El metodo para delogarse
     logout(){
@@ -58,7 +59,7 @@ export default {
   computed: {
     //Creamos alias para los getters
     ...mapGetters({
-      islogged: authTypes.getters.logged;
+      islogged: authTypes.getters.logged
     })
 
   }

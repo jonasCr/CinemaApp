@@ -1,5 +1,7 @@
 import Vue from 'vue'
-import App from '@/App.vue'
+import App from '@/App.vue';
+import Router from '@/router';
+Vue.use(Router);
 
 //Vue-resource: Para hacer peticiones HTTP
 import VueResource from 'vue-resource';
@@ -126,5 +128,6 @@ new Vue({
   el: '#app',
   render: h => h(App),
   store,
-  i18n
+  i18n,
+  Router
 })
