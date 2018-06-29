@@ -18,15 +18,7 @@ import {store} from '@/main';
 //configurar el router
 const router = new Router ({
   routes: [
-    // {
-    //   path: '/bookings',
-    //   name: 'bookinks',
-    //   component: Bookings,
-    //   meta: {
-    //     Auth: true,
-    //     title: 'Reservas',
-    //   }
-    // }
+    
   ]
 });
 //.configurar el router

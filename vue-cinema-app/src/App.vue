@@ -1,8 +1,15 @@
 <template>
- <navigation></navigation>
+ <div id="app">
+   <navigation></navigation>
+   <div v-if="processing">
+     <BlockUI :message="$t('messages.processing')"></BlockUI>
+   </div>
+ </div>
 </template>
 
 <script>
+import globalTypes from '@/types/global';
+import {mapGetters} from 'vuex';
 import Navigation from '@/components/Navigation'
 export default {
   name: 'app',
@@ -13,6 +20,11 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  computed : {
+    ...mapGetters({
+      processing: globalTypes.getters.processing
+    })
   }
 }
 </script>

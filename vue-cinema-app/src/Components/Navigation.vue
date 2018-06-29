@@ -24,25 +24,37 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <router-link to="/">{{$t('navigation.cinema')}}</router-link>
+            <router-link to="/">
+              {{$t('navigation.cinema')}}
+            </router-link>
           </li>
           <li>
-            <router-link v-if="isLogged" to="/profile">{{$t('navigation.my_acount')}}</router-link>
+            <!-- <router-link v-if="isLogged" to="/profile">
+              {{$t('navigation.my_acount')}}
+            </router-link> -->
           </li>
           <li>
-            <router-link v-if="isLogged" to="/bookings">{{$t('navigation.bookings')}}</router-link>
+            <!-- <router-link v-if="isLogged" to="/bookings">
+              {{$t('navigation.bookings')}}
+            </router-link> -->
           </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <router-link v-if="!isLogged" to="/login">{{$t('navigation.login')}}</router-link>
+            <!-- <router-link v-if="!isLogged" to="/login">
+              {{$t('navigation.login')}}
+            </router-link> -->
           </li>
           <li>
-            <router-link v-if="!isLogged" to="/register">{{$t('navigation.register')}}</router-link>
+            <!-- <router-link v-if="!isLogged" to="/register">
+              {{$t('navigation.register')}}
+            </router-link> -->
           </li>
           <li v-if="isLogged">
-            <a @click.prevent="logout" href="#">{{$t('navigation.logout')}}</a>
+            <!-- <a @click.prevent="logout" href="#">
+              {{$t('navigation.logout')}}
+            </a> -->
           </li>
         </ul>
 
@@ -72,9 +84,9 @@ export default {
   },
   computed: {
     //Creamos alias para los getters
-    ...mapGetters({
-      isLogged: authTypes.getters.logged
-    })
+    isLogged(){
+      return false
+    }
 
   }
 }

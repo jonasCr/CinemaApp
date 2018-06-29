@@ -10,7 +10,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "blockui": "^1.0.0",
     "hoek": "^5.0.3",
     "jquery": "^3.3.1",
     "jwt-decode": "^2.2.0",
