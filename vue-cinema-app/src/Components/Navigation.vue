@@ -1,40 +1,54 @@
 /*
-  Simplement la bara de navigation.
+  Simplemente la bara de navigation.
   La viste dependera de si estamos connectado o no;
 */
 <template lang="html">
   <nav class="navbar navbar-default">
-    <a href="#" class="navbar-brand">Vue.js 2</a>
-    <button class="navbar-toggle" data-toggle="collapse" data-target="#navbarNav" type="button" name="button">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collpase navbar-collapse" id="navbarNav">
-      <div class="nav navbar-nav">
-        <router-link to="/">
-          {{$t('navigation.cinema')}}
-        </router-link>
-        <router-link v-if="logged" to="/profile">
-          {{$t('navigation.my_account')}}
-        </router-link>
-        <router-link v-if="logged" to="/booking">
-          {{$t('navigation.booking')}}
-        </router-link>
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#nav-collapse"
+          aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Vue.js</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <router-link to="/">{{$t('navigation.cinema')}}</router-link>
+          </li>
+          <li>
+            <router-link v-if="isLogged" to="/profile">{{$t('navigation.my_acount')}}</router-link>
+          </li>
+          <li>
+            <router-link v-if="isLogged" to="/bookings">{{$t('navigation.bookings')}}</router-link>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <router-link v-if="!isLogged" to="/login">{{$t('navigation.login')}}</router-link>
+          </li>
+          <li>
+            <router-link v-if="!isLogged" to="/register">{{$t('navigation.register')}}</router-link>
+          </li>
+          <li v-if="isLogged">
+            <a @click.prevent="logout" href="#">{{$t('navigation.logout')}}</a>
+          </li>
+        </ul>
+
       </div>
 
     </div>
-
-    <div class="nav navbar-nav navbar-right">
-      <router-link v-if="!logged" to="/login">
-        {{$t('navigation.login')}}
-      </router-link>
-      <router-link v-if="!logged" to="/registrer">
-        {{$t('navigation.registrer')}}
-      </router-link>
-      <a @click.prevent="logout()" v-if="logged" @ href="#">
-        {{$t('navigation.logout')}}
-      </a>
-    </div>
-
   </nav>
 </template>
 
@@ -59,7 +73,7 @@ export default {
   computed: {
     //Creamos alias para los getters
     ...mapGetters({
-      islogged: authTypes.getters.logged
+      isLogged: authTypes.getters.logged
     })
 
   }

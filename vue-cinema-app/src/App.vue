@@ -1,10 +1,14 @@
 <template>
-
+ <navigation></navigation>
 </template>
 
 <script>
+import Navigation from '@/components/Navigation'
 export default {
   name: 'app',
+  components:{
+    Navigation,
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -14,30 +18,39 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  background-color: #36383A !important;
+}
+.well {
+  background-color: #fff !important;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-
-h1, h2 {
-  font-weight: normal;
+h1, h3, h4, p {
+  color: #fff !important;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
+h2, a {
+  color: #E33A2D !important;
 }
-
-li {
-  display: inline-block;
-  margin: 0 10px;
+th, td{
+  color: #E33A2D !important;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
-
-a {
-  color: #42b983;
+td {
+  background-color: #fff;
+}
+hr {
+  border: 1px solid #E33A2D !important;
+  width: 100%;
+}
+.page-link.active  {
+  background-color: #D24839 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
 }
 </style>

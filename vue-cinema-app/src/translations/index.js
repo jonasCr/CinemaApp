@@ -185,7 +185,7 @@ export default {
       list: 'List of your reservations'
     }
   },
-  fr: {
+  /*fr: {
     messages: {
       processing: "En cours...",
       accessDenied: "Acces refusé"
@@ -197,7 +197,7 @@ export default {
     },
     navigation: {
       login: 'Login',
-      register: "Enregistrement",
+      register: 'Enregistrement',
       logout: 'Logout',
       my_account: "Mon compte",
       cinema: 'Cinémas',
@@ -277,5 +277,5 @@ export default {
       hour: "Heure",
       list: "Toutes vos reservations"
     }
-  }
+  }*/
 }

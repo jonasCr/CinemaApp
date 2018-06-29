@@ -29,7 +29,7 @@ Vue.use(BlockUI);
 //modulos y typos
 import globalTypes from '@/types/global';
 import authModule from '@/modules/auth';
-import Navigation from '@/components/navigation';
+import Navigation from '@/components/Navigation';
 Vue.use(Navigation);
 //.modulos y typos
 
@@ -116,7 +116,7 @@ export const store = new Vuex.Store({
 //vue traducciones
 import VueI18n from 'vue-i18n';
 Vue.use(VueI18n)
-//importacion las "palabras de todas las idiomas"
+//importacion las "palabras" de todas las idiomas"
 import messages from '@/translations'
 const i18n = new VueI18n({
   locale: store.state.language,
