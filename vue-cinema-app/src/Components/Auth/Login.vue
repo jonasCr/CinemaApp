@@ -26,13 +26,16 @@
               v-validate="'required|email'"
               :placeholder="$t(login.email)"
               :class="{'has-error' : errors.has('email')}">
+              <!--
+                v-validate check si el correo es valido y si esta puesta
+              -->
             <span v-if="errors.has('email')" class="text-danger">
               {{errors.first('email')}}
             </span>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-row form-group">
           <label for="password" class="control-label col-md-4">
             {{$t('login.password')}}
           </label>
@@ -47,6 +50,14 @@
               v-validate="'required|min:6'"
               :placeholder="$t(login.email)"
               :class="{'has-error' : errors.has('password')}">
+              <!--
+              errors.has('password') se encuentra en el store y esta enviando por vee-validate
+
+              {'has-error' : errors.has('password')} => si hay error, pon la clase has-error
+
+              v-validate check si la contrasena tiene minimo 6 caracteres
+              -->
+
             <span v-if="errors.has('password')" class="text-danger">
               {{errors.first('password')}}
             </span>
@@ -65,13 +76,13 @@
 </template>
 
 <script>
-import {{mapActions}}
+import {mapActions} from 'vuex'
 import authTypes from '@/types/auth'
-export default
+export default {
   name: 'login',
   data() {
     return {
-      email: '';
+      email: '',
       password: '',
       error: null
     }
@@ -81,16 +92,36 @@ export default
       login: authTypes.actions.login
     }),
     validateBeforeSubmit(){
+      //Hacemos las validation con vee-validate
       this.$validator.validateAll()
         .then(result => {
           if(!result) {
             //fallan las validacion
           }else {
+            //llamamos a la function para hacer el login
+            // y le pasamos un objeto con el email y el password
             this.login({
-              email: this.password,
+              email: this.email,
               password: this.password,
             })
+              .then(
+                //si esta bien, enviamos al usuario al incio
+                user => {
+                  this.$router.push('/')
+                },
+                //Si hay error, pasamos la variable error a true
+                // para enseñar el mensaje de error
+                error => {
+                  //TODO: Monstrar un mensaje en function del error
+                  this.error = true;
+                  console.log(error);
+                }
+
+              )
           }
+        })
+        .catch(error => {
+          console.log(error);
         })
     }
   }

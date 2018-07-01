@@ -29,32 +29,32 @@
             </router-link>
           </li>
           <li>
-            <!-- <router-link v-if="isLogged" to="/profile">
+            <router-link v-if="isLogged" to="/profile">
               {{$t('navigation.my_acount')}}
-            </router-link> -->
+            </router-link>
           </li>
           <li>
-            <!-- <router-link v-if="isLogged" to="/bookings">
+            <router-link v-if="isLogged" to="/bookings">
               {{$t('navigation.bookings')}}
-            </router-link> -->
+            </router-link>
           </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <!-- <router-link v-if="!isLogged" to="/login">
+            <router-link v-if="!isLogged" to="/login">
               {{$t('navigation.login')}}
-            </router-link> -->
+            </router-link>
           </li>
           <li>
-            <!-- <router-link v-if="!isLogged" to="/register">
+            <router-link v-if="!isLogged" to="/register">
               {{$t('navigation.register')}}
-            </router-link> -->
+            </router-link>
           </li>
           <li v-if="isLogged">
-            <!-- <a @click.prevent="logout" href="#">
+            <a @click.prevent="logout" href="#">
               {{$t('navigation.logout')}}
-            </a> -->
+            </a>
           </li>
         </ul>
 
@@ -84,9 +84,9 @@ export default {
   },
   computed: {
     //Creamos alias para los getters
-    isLogged(){
-      return false
-    }
+    ...mapGetters({
+      isLogged: authTypes.getters.logged
+    })
 
   }
 }
