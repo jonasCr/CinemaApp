@@ -9,7 +9,7 @@
     <hr>
 
     <div class="well">
-      <form autocomplete="false" @submit.prevent="validateBeforeSubmit">
+      <form class="form-horizontal" autocomplete="false" @submit.prevent="validateBeforeSubmit">
 
         <div class="form-group">
           <label for="email" class="control-label col-md-4">
