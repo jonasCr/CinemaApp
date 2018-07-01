@@ -30,7 +30,7 @@
           </li>
           <li>
             <router-link v-if="isLogged" to="/profile">
-              {{$t('navigation.my_acount')}}
+              {{$t('navigation.my_account')}}
             </router-link>
           </li>
           <li>

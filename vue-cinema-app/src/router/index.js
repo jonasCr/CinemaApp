@@ -4,6 +4,7 @@ Vue.use(Router);
 
 //components
 import Login from '@/components/Auth/Login'
+import Register from '@/components/Auth/Register'
 //.components
 
 //types
@@ -25,6 +26,27 @@ const router = new Router ({
       meta: {
         Auth: false,
         title: 'Iniciar sesión'
+      },
+      //Antes de entrar en la ruta, hacemos una verificación:
+      beforeEnter: (to, from, next) => {
+        //si ya esta loggeado, enviamos el usuario en la pagina de incio
+        if (store.state.authModule.logged) {
+          next({path: '/'});
+          //Si no esta loggeado, le dejamos entrar y no hacemos nada
+        } else {
+          next();
+
+        }
+      }
+
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register,
+      meta: {
+        Auth: false,
+        title: 'Registrarme'
       },
       //Antes de entrar en la ruta, hacemos una verificación:
       beforeEnter: (to, from, next) => {

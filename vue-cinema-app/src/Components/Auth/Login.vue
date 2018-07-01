@@ -21,10 +21,11 @@
               class="form-control"
               type="text"
               name="email"
+              id="email"
               value="email"
               v-model="email"
               v-validate="'required|email'"
-              :placeholder="$t(login.email)"
+              :placeholder="$t('login.email')"
               :class="{'has-error' : errors.has('email')}">
               <!--
                 v-validate check si el correo es valido y si esta puesta
@@ -46,11 +47,12 @@
             <input
               class="form-control"
               type="password"
+              id="password"
               name="password"
               value="password"
               v-model="password"
               v-validate="'required|min:6'"
-              :placeholder="$t(login.email)"
+              :placeholder="$t('login.password')"
               :class="{'has-error' : errors.has('password')}">
               <!--
               errors.has('password') se encuentra en el store y esta enviando por vee-validate
