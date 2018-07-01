@@ -29,7 +29,7 @@ const actions = {
         })
         .finally(()=> {
           //Paramos el processo
-          commit([globalTypes.mutations.stopProcessing]);
+          commit(globalTypes.mutations.stopProcessing);
         })
     })
   },

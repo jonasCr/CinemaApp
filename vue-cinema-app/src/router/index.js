@@ -3,7 +3,7 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 //components
-
+import Login from '@/components/Auth/Login'
 //.components
 
 //types
@@ -18,7 +18,27 @@ import {store} from '@/main';
 //configurar el router
 const router = new Router ({
   routes: [
-    
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+      meta: {
+        Auth: false,
+        title: 'Iniciar sesión'
+      },
+      //Antes de entrar en la ruta, hacemos una verificación:
+      beforeEnter: (to, from, next) => {
+        //si ya esta loggeado, enviamos el usuario en la pagina de incio
+        if (store.state.authModule.logged) {
+          next({path: '/'});
+          //Si no esta loggeado, le dejamos entrar y no hacemos nada
+        } else {
+          next();
+
+        }
+      }
+
+    }
   ]
 });
 //.configurar el router

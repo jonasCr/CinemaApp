@@ -4,6 +4,8 @@
    <div v-if="processing">
      <BlockUI :message="$t('messages.processing')"></BlockUI>
    </div>
+
+   <router-view></router-view>
  </div>
 </template>
 

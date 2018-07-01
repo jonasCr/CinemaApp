@@ -35,7 +35,9 @@
           </div>
         </div>
 
-        <div class="form-row form-group">
+        <br>
+
+        <div class="form-group">
           <label for="password" class="control-label col-md-4">
             {{$t('login.password')}}
           </label>
