@@ -8,7 +8,7 @@ export default namespace('cinema', {
     'seats'
   ],
   actions: [
-    'fetchCinema'
+    'fetchCinemas'
   ],
   mutations: [
     'receivedCinemas',

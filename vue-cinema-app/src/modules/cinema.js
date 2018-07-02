@@ -38,33 +38,22 @@ const getters = {
     //Vamos a almecenar los filtros no el la variable global sino en una variable a parte
     let cinemas = state.cinemas;
 
-
-
     //si el usuario hace una busqueda:
     if(state.query.search) {
-      cinemas = cinemas.filter(cinema =>
-        cinema.cinema_name.toLowerCase().includes(state.query.search)
-      );
+      cinemas = cinemas.filter(cinema => cinema.cinema_name.toLowerCase().includes(state.query.search));
     }
 
 
     //si el usuario hace una busqueda por sala
     if (state.query.rooms){
       //filtramos para monstrar solo los cinema que tiene = o mas sala que los que indique el usuario
-      cinemas = cinemas.filter(cinema =>
-        cinema._meta_.number_of_rooms >= state.query.rooms
-      );
+      cinemas = cinemas.filter(cinema => cinema._meta_.number_of_rooms >= state.query.rooms);
     }
 
     //si el usuario hace una busqueda por asiento
     if (state.query.seats) {
-      cinemas = cinemas.filter(cinema =>
-        cinema.cinema_seat_capacity >= state.query.seats
-      );
+      cinemas = cinemas.filter(cinema => cinema.cinema_seat_capacity >= state.query.seats);
     }
-
-
-
     return cinemas
   }
 
@@ -81,9 +70,13 @@ const mutations = {
   [types.mutations.setSearch]:(state, query) => {
     state.query.search = query;
   },
-  //Almacenamos el siento dentro de la variable state
-  [types.mutations.setRooms]: (state, seat) => {
-    state.query.seats = seat
+  //Almacenamos la sala dentro de la variable state
+  [types.mutations.setRooms]: (state, room) => {
+    state.query.seats = room
+  },
+  //Almacenamos el asiento dentro de la variable state
+  [types.mutations.setSeats]: (state, seats) => {
+    state.query.seats = seats;
   },
   //Resetear los filtros. Les ponemos al estado que estan al incio.
   [types.mutations.clearFilter]: (state) => {
