@@ -28,8 +28,9 @@ import router from '@/router';
 //modulos y typos
   import globalTypes from '@/types/global';
   import authModule from '@/modules/auth';
-  import Navigation from '@/components/Navigation';
-  Vue.use(Navigation);
+  import cinemaModule from '@/modules/cinema';
+  //import Navigation from '@/components/Navigation';
+  //Vue.use(Navigation);
 
 //.modulos y typos
 
@@ -41,7 +42,7 @@ import router from '@/router';
       import validatorEn from '@/validator/en'
       import validatorFr from '@/validator/fr'
 
-  Validator.localize('es', validatorEs)
+  Validator.localize('es', validatorEs);
 
   Vue.use(VeeValidate);
 //.vee-validate
@@ -108,7 +109,8 @@ import router from '@/router';
     modules: {
       //importamos los modulos de la carpeta modules para que
       //sean disponibles dentro de vuex
-      authModule
+      authModule,
+      cinemaModule
     }
   })
 //.vuex
@@ -129,5 +131,5 @@ new Vue({
   render: h => h(App),
   store,
   i18n,
-  router
+  router,
 })

@@ -72,7 +72,9 @@ router.beforeEach((to, from, next)=> {
     next({path: '/login'})
   } else{
       if(store.state.authModule.logged){
-
+        //Si esta logeado, le asignamos un user
+        //l.98: modules/auth.js
+        store.commit(authTypes.mutations.setUser)
       }
     next();
   }
