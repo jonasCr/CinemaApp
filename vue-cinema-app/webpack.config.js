@@ -85,11 +85,6 @@ module.exports = {
   performance: {
     hints: false
   },
-  plugins: [
-    // Enable the plugin to let webpack communicate changes
-    // to WDS. --hot sets this automatically!
-    new webpack.HotModuleReplacementPlugin(),
-  ],
   devtool: '#eval-source-map'
 }
 

@@ -47,7 +47,7 @@ const getters = {
     //si el usuario hace una busqueda por sala
     if (state.query.rooms){
       //filtramos para monstrar solo los cinema que tiene = o mas sala que los que indique el usuario
-      cinemas = cinemas.filter(cinema => cinema._meta_.number_of_rooms >= state.query.rooms);
+      cinemas = cinemas.filter(cinema => cinema.__meta__.number_of_rooms >= state.query.rooms);
     }
 
     //si el usuario hace una busqueda por asiento
@@ -55,9 +55,7 @@ const getters = {
       cinemas = cinemas.filter(cinema => cinema.cinema_seat_capacity >= state.query.seats);
     }
     return cinemas
-  }
-
-
+  },
 };
 
 const mutations = {
@@ -72,7 +70,7 @@ const mutations = {
   },
   //Almacenamos la sala dentro de la variable state
   [types.mutations.setRooms]: (state, room) => {
-    state.query.seats = room
+    state.query.rooms = room
   },
   //Almacenamos el asiento dentro de la variable state
   [types.mutations.setSeats]: (state, seats) => {

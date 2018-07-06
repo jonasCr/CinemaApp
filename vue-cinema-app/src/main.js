@@ -29,6 +29,7 @@ import router from '@/router';
   import globalTypes from '@/types/global';
   import authModule from '@/modules/auth';
   import cinemaModule from '@/modules/cinema';
+  import movieModule from '@/modules/movie';
   //import Navigation from '@/components/Navigation';
   //Vue.use(Navigation);
 
@@ -110,7 +111,8 @@ import router from '@/router';
       //importamos los modulos de la carpeta modules para que
       //sean disponibles dentro de vuex
       authModule,
-      cinemaModule
+      cinemaModule,
+      movieModule
     }
   })
 //.vuex

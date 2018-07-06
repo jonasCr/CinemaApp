@@ -1,11 +1,14 @@
 <template>
  <div id="app">
-   <navigation></navigation>
-   <div v-if="processing">
-     <BlockUI :message="$t('messages.processing')"></BlockUI>
+   <div class="container-fluid">
+     <navigation></navigation>
+     <div v-if="processing">
+       <BlockUI :message="$t('messages.processing')"></BlockUI>
+     </div>
+
+     <router-view></router-view>
    </div>
 
-   <router-view></router-view>
  </div>
 </template>
 

@@ -5,7 +5,7 @@ export default namespace('cinema', {
     'cinemas',
     'search',
     'rooms',
-    'seats'
+    'seats',
   ],
   actions: [
     'fetchCinemas'
@@ -14,6 +14,7 @@ export default namespace('cinema', {
     'receivedCinemas',
     'setSearch',
     'setRooms',
+    'setSeats',
     'clearFilter'
   ]
 })
