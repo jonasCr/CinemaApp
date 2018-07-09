@@ -6,6 +6,7 @@ Vue.use(Router);
 import Login from '@/components/Auth/Login'
 import Register from '@/components/Auth/Register'
 import Cinemas from '@/components/Cinemas/Cinemas'
+import Movies from '@/components/Movies/Movies'
 //.components
 
 //types
@@ -69,7 +70,15 @@ const router = new Router ({
         Auth: false,
         title: 'Cinemas'
       },
-
+    },
+    {
+      path: '/cinema/:id',
+      name: 'cinema',
+      component: Movies,
+      meta:{
+        Auth: false,
+        title: "Listado de pelicula"
+      }
     }
   ]
 });
