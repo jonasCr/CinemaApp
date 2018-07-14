@@ -30,8 +30,8 @@ import router from './router/index';
   import authModule from './modules/auth';
   import cinemaModule from './modules/cinema';
   import movieModule from './modules/movie';
-  //import Navigation from './components/Navigation';
-  //Vue.use(Navigation);
+  import bookingModule from './modules/booking';
+
 
 //.modulos y typos
 
@@ -112,7 +112,8 @@ import router from './router/index';
       //sean disponibles dentro de vuex
       authModule,
       cinemaModule,
-      movieModule
+      movieModule,
+      bookingModule
     }
   })
 //.vuex

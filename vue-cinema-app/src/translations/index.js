@@ -185,7 +185,7 @@ export default {
       list: 'List of your reservations'
     }
   },
-  /*fr: {
+  fr: {
     messages: {
       processing: "En cours...",
       accessDenied: "Acces refusé"
@@ -277,5 +277,5 @@ export default {
       hour: "Heure",
       list: "Toutes vos reservations"
     }
-  }*/
+  }
 }

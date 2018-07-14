@@ -38,6 +38,7 @@
               {{$t('navigation.bookings')}}
             </router-link>
           </li>
+          <language-selector></language-selector>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -67,7 +68,11 @@
 <script>
 import {mapActions, mapGetters} from 'vuex';
 import authTypes from '../types/auth';
+import LanguageSelector from './LanguageSelector'
 export default {
+  components: {
+    LanguageSelector
+  },
   name:'navigation',
   methods: {
     //Creamos un alias para las actiones
