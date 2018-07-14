@@ -66,7 +66,7 @@
 
 <script>
 import {mapActions, mapGetters} from 'vuex';
-import authTypes from '@/types/auth';
+import authTypes from '../types/auth';
 export default {
   name:'navigation',
   methods: {

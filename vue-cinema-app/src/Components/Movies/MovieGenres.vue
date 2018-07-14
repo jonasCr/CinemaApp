@@ -2,7 +2,7 @@
   <div class="MoviesGenres__Wrapper">
     <label>{{$t('genre.name')}}</label>
     <div v-if="genres">
-      <span v-for="genre in genres" class="badge-info">
+      <span v-for="genre in genres" class="badge badge-info">
         {{genre.genre_name}}
       </span>
     </div>
@@ -17,7 +17,9 @@
     export default {
         name: "movie-genres",
         props:{
-          type: Array
+          genres: {
+            type: Array
+          }
         }
     }
 </script>

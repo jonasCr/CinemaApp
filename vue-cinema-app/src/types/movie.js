@@ -1,4 +1,4 @@
-import namespace from '@/utils/namespace'
+import namespace from '../utils/namespace'
 
 export default namespace('movie', {
   getters:[

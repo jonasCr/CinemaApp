@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import cinemaTypes from '@/types/cinema'
+  import cinemaTypes from '../../types/cinema'
   import {mapGetters} from 'vuex'
   import CinemaItem from './CinemaItem'
   import CinemaFilter from './CinemaFilter'

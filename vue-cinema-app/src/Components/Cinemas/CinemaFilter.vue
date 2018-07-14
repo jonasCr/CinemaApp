@@ -35,7 +35,7 @@
 
 <script>
   import {mapGetters, mapMutations} from 'vuex';
-  import cinemaTypes from '@/types/cinema';
+  import cinemaTypes from '../../types/cinema';
     export default {
       name: "cinema-filter",
       methods: {

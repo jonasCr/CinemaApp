@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import App from '@/App.vue';
-import router from '@/router';
+import App from './App.vue';
+import router from './router/index';
 
 //Vue-resource: Para hacer peticiones HTTP
     import VueResource from 'vue-resource';
@@ -26,11 +26,11 @@ import router from '@/router';
 //.blockui
 
 //modulos y typos
-  import globalTypes from '@/types/global';
-  import authModule from '@/modules/auth';
-  import cinemaModule from '@/modules/cinema';
-  import movieModule from '@/modules/movie';
-  //import Navigation from '@/components/Navigation';
+  import globalTypes from './types/global';
+  import authModule from './modules/auth';
+  import cinemaModule from './modules/cinema';
+  import movieModule from './modules/movie';
+  //import Navigation from './components/Navigation';
   //Vue.use(Navigation);
 
 //.modulos y typos
@@ -39,9 +39,9 @@ import router from '@/router';
   import VeeValidate, {Validator} from 'vee-validate';
 
     //traduction:
-      import validatorEs from '@/validator/es'
-      import validatorEn from '@/validator/en'
-      import validatorFr from '@/validator/fr'
+      import validatorEs from './validator/es'
+      import validatorEn from './validator/en'
+      import validatorFr from './validator/fr'
 
   Validator.localize('es', validatorEs);
 
@@ -54,7 +54,7 @@ import router from '@/router';
   //El segundo parametro es para decir si queremos usar vue o no (false)
   //El tercero es para decir si queremos usar algun framework
   //El ultimo define que tema queremos
-  Vue.use(ClientTable, {}, false, 'bootstrap4', 'default')
+  Vue.use(ClientTable, {}, false, 'bootstrap3', 'default')
 //.vue-tables-2
 
 //vuex
@@ -121,7 +121,7 @@ import router from '@/router';
   import VueI18n from 'vue-i18n';
   Vue.use(VueI18n)
   //importacion las "palabras" de todas las idiomas"
-    import messages from '@/translations'
+    import messages from './translations/index'
     const i18n = new VueI18n({
       locale: store.state.language,
       messages

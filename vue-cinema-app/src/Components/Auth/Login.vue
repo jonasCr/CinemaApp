@@ -81,7 +81,7 @@
 
 <script>
 import {mapActions} from 'vuex'
-import authTypes from '@/types/auth'
+import authTypes from '../../types/auth'
 export default {
   name: 'login',
   data() {

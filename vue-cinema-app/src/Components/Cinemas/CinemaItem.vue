@@ -33,7 +33,7 @@
 
 <script>
   import {mapGetters} from 'vuex';
-  import CinemaTypes from '@/types/cinema'
+  import CinemaTypes from '../../types/cinema'
 
     export default {
       name: "cinema-item",

@@ -1,6 +1,7 @@
 <template>
  <div id="app">
    <div class="container-fluid">
+     <div></div>
      <navigation></navigation>
      <div v-if="processing">
        <BlockUI :message="$t('messages.processing')"></BlockUI>
@@ -13,9 +14,9 @@
 </template>
 
 <script>
-import globalTypes from '@/types/global';
+import globalTypes from './types/global';
 import {mapGetters} from 'vuex';
-import Navigation from '@/components/Navigation'
+import Navigation from './Components/Navigation'
 export default {
   name: 'app',
   components:{

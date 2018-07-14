@@ -3,19 +3,19 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 //components
-import Login from '@/components/Auth/Login'
-import Register from '@/components/Auth/Register'
-import Cinemas from '@/components/Cinemas/Cinemas'
-import Movies from '@/components/Movies/Movies'
+import Login from '../Components/Auth/Login'
+import Register from '../Components/Auth/Register'
+import Cinemas from '../Components/Cinemas/Cinemas'
+import Movies from '../Components/Movies/Movies'
 //.components
 
 //types
-import authTypes from '@/types/auth';
-import globalTypes from '@/types/global'
+import authTypes from '../types/auth';
+import globalTypes from '../types/global'
 //.types
 
 //global store
-import {store} from '@/main';
+import {store} from '../main';
 //.global store
 
 //configurar el router

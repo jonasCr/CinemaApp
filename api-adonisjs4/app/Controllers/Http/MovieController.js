@@ -27,27 +27,26 @@ class MovieController {
     return response.json(cinema);
   }
 
-  async byMovie ({response, params}) {
-    const movie = await MovieShowing.findBy('movie_id', params.movieId);
-    await movie.loadMany({
-      movie_showing_times: (movie_showing_time) => {
-        movie_showing_time
-          .where('hour_to_show', '>=', new Date().getHours())
-          .with('bookings', (booking) => {
-            booking.with('seats')
-          })
-      },
+    async byMovie ({response, params}) {
+        const movie = await MovieShowing.findBy('movie_id', params.movieId);
+        await movie.loadMany({
+            movie_showing_times: (movie_showing_times) => {
+                movie_showing_times
+                    .where('hour_to_show', '>=', new Date().getHours())
+                    .with('bookings', (bookings) => {
+                        bookings.with('seats')
+                    })
+            },
+            movie: (movie) => {
+                movie.with('genres', (genres) => {
+                    genres.select('genre_name')
+                })
+            },
+            room: null
+        });
 
-      movie: (movie) => {
-        movie.with('genres', (genre) => {
-          genres.select('genre_name')
-        })
-      },
-      room: null
-    });
-
-    return response.json(movie)
-  }
+        return response.json(movie);
+    }
 
 }
 

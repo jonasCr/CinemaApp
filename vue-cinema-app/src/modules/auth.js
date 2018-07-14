@@ -1,5 +1,5 @@
-import types from '@/types/auth';
-import globalTypes from '@/types/global';
+import types from '../types/auth';
+import globalTypes from '../types/global';
 import Vue from 'vue';
 
 const state = {

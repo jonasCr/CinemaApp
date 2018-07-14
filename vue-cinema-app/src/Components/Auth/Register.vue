@@ -114,7 +114,7 @@
 </template>
 
 <script>
-  import authTypes from '@/types/auth';
+  import authTypes from '../../types/auth';
   import {mapActions} from 'vuex';
   export default {
     name: "register",

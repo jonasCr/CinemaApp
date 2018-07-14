@@ -27,10 +27,10 @@
           {{$t('movie.director')}} : {{movie.movie.movie_director}}
         </h3>
         <p>
-          {{$t('movie.synopsis')}} : {{movie.movie.synopsis}}
+          {{$t('movie.synopsis')}} : {{movie.movie.movie_synopsis}}
         </p>
         <p>
-          {{$t('movie.room_number')}} : {{movie.room.room_rows}}
+          {{$t('movie.room_rows')}} : {{movie.room.room_rows}}
         </p>
         <p>
           {{$t('movie.room_seats')}} : {{movie.room.room_seats}}
@@ -40,10 +40,17 @@
         <div class="row">
           <div class="col-md-6">
             <!--mostrar los generos de esta pelicula-->
-            <movie-genre :genres="movies.movie.genres"></movie-genre>
+            <movie-genre :genres="movie.movie.genres"></movie-genre>
           </div>
           <div class="col-md-6">
-            mostrar las horas disponible de esta pelicula
+            <!--Recogemos el evento click que hemos lanzado desde el componente hijo y,
+            en este caso, le enviamos aún mas arriba-->
+            <movie-showing-times
+              v-on:selectHour="$emit('selectedHour', $event)"
+              :showing_times="movie.movie_showing_times"
+            >
+
+            </movie-showing-times>
           </div>
         </div>
       </div>
@@ -53,7 +60,13 @@
 </template>
 
 <script>
+  import MovieGenre from './MovieGenres'
+  import MovieShowingTimes from './MovieShowingTimes'
     export default {
+      components: {
+        MovieGenre,
+        MovieShowingTimes
+      },
       name: "movie",
       props: {
         movie: {
